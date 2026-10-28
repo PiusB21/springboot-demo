@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public interface UserService {
     int addUser(AddUserDto dto);
-    boolean updateUser(int userId, UserAccount userAccount);
+    boolean updateUser(int userId, AddUserDto dto);
     boolean deleteUser(int userId);
     List<UserAccount> findAllUsers();
     Optional<UserAccount> getUserById(int userId);

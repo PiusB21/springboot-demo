@@ -36,7 +36,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean updateUser(int userId, AddUserDto dto) {
-        return false;
+
+        Optional<UserAccount> opt = userRepository.findById(userId);
+        if (opt.isEmpty())
+            return false;
+
+        UserAccount user = opt.get();
+
+        user.setFirstName(dto.firstName());
+        user.setLastName(dto.lastName());
+        user.setEmail(dto.email());
+        user.setPhone(dto.phone());
+        user.setUserType(dto.userType());
+
+        userRepository.save(user);
+
+        return true;
     }
 
     @Override
