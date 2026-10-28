@@ -1,2 +1,2 @@
 /uaa-service/.idea/
-/uaa-service/src/main/resources/application.properties
+springboot-demo/uaa-service/src/main/resources/application.properties
