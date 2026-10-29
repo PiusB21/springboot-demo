@@ -26,7 +26,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/products-filtered")
-	public ResponseEntity<List<Product>> getAllProductsByFilter(@RequestParam(required = false) int id,@RequestParam(required = false) String name,@RequestParam(required = false) int categoryId,@RequestParam(required = false) int quantity,@RequestParam(required = false) Double minPrice,@RequestParam(required = false) Double maxPrice) {
+	public ResponseEntity<List<Product>> getAllProductsByFilter(@RequestParam(required = false) int id,@RequestParam(required = false) String name,@RequestParam(required = false) int categoryId,@RequestParam(required = false) int quantity,@RequestParam(required = false) Double minPrice, @RequestParam(required = false) Double maxPrice) {
 		ProductFilter filter = new ProductFilter(
 				id, name, categoryId, quantity, minPrice,maxPrice
 		);
